@@ -5,6 +5,7 @@ MainHeader = '''
 ┏━┓╺┳╸┏━╸┏━╸┏━┓┏┓╻┏━┓┏━╸┏━┓┏━┓┏━┓╻ ╻╻ ╻       Hide an Image within another
 ┗━┓ ┃ ┣╸ ┃╺┓┣━┫┃┗┫┃ ┃┃╺┓┣┳┛┣━┫┣━┛┣━┫┗┳┛                   by
 ┗━┛ ╹ ┗━╸┗━┛╹ ╹╹ ╹┗━┛┗━┛╹┗╸╹ ╹╹  ╹ ╹ ╹                @mhsattarian
+
 '''
 print(MainHeader)
 
@@ -57,11 +58,14 @@ if __name__ == '__main__':
   s = steganography()
   output = s.encode_images(container, containee)
 
-  cv2.imshow("container", container)
-  cv2.waitKey(0)
-  cv2.imshow("containee", containee)
-  cv2.waitKey(0)
-  cv2.imshow("output", output)
-  cv2.waitKey(0)
+  cv2.imwrite("images/output.png", output)
+  print("- output stored in Images directory.")
+
+  # cv2.imshow("container", container)
+  # cv2.waitKey(0)
+  # cv2.imshow("containee", containee)
+  # cv2.waitKey(0)
+  # cv2.imshow("output", output)
+  # cv2.waitKey(0)
   
-  cv2.destroyAllWindows()
+  # cv2.destroyAllWindows()
