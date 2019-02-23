@@ -10,10 +10,11 @@ MainHeader = '''
 '''
 print(MainHeader)
 
-class steganography:
-  def __init__(self):
+class Steganography:
+  
+  def __init__(self, imageColorBits = 8):
     # Assume Images have 8 bit to store colors
-    self.imageColorBits = 8
+    self.imageColorBits = imageColorBits
 
   def get_high_order_bits(self, number, numberOfBits = 4):
     # Calculate number of bits to shift right
@@ -29,15 +30,15 @@ class steganography:
     # Shift right to make high-order bits low-order
     return number >> n
 
-  def compress_image(self, image, setLowOrder = False):
+  def compress_image(self, image, setLowOrder = False, numberOfBits = 4):
     """Compress image by removing low-order bits"""
     h, w = image.shape
     output = np.zeros([h,w], dtype=np.uint8)
 
     for i in range(h):
       for j in range(w):
-        temp = self.get_high_order_bits(image[i, j])
-        if setLowOrder: temp = self.set_high_order_as_low(temp)
+        temp = self.get_high_order_bits(image[i, j], numberOfBits = numberOfBits)
+        if setLowOrder: temp = self.set_high_order_as_low(temp, numberOfBits = self.imageColorBits - numberOfBits)
         output[i, j] = temp
     return output
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
   container = cv2.imread('images/container.png', 0)
   containee = cv2.imread('images/containee.png', 0)
 
-  s = steganography()
+  s = Steganography()
   output = s.encode_images(container, containee)
 
   cv2.imwrite("images/output.png", output)
