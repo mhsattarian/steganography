@@ -23,3 +23,9 @@ so here we use an image as container also called `container.png` and another one
 ```shell
 python steganography.py
 ```
+
+#### TODOs:
+
+- Add decode functionality
+- Complete CLI features
+- Support Colored images
