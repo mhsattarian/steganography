@@ -29,3 +29,4 @@ python steganography.py
 - Add decode functionality
 - Complete CLI features
 - Support Colored images
+- Bossting things up using cython or numpy on gpu
