@@ -3,7 +3,7 @@ import numpy as np
 from steganography import Steganography
 from tqdm import tqdm
 
-image = cv2.imread('images/container.png', 0)
+image = cv2.imread('images/container.png')
 s = Steganography()
 
 for i in tqdm(range(9)):
