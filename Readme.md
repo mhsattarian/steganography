@@ -32,10 +32,10 @@ then, Encode images or Decode with:
 
 ```shell
 # Encode
-python steganography.py <encode> <container_image_path> <containee_image_path>
+python steganography.py encode <container_image_path> <containee_image_path>
 
 # Decode
-python steganography.py <decode> <image_path>
+python steganography.py decode <image_path>
 ```
 
 see `--help` for more options.
