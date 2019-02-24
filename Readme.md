@@ -1,4 +1,4 @@
-# steganography
+# Steganography
 
 ```
 ┏━┓╺┳╸┏N╸┏━╸┏O┓┏┓╻┏━┓┏E╸┏E┓┏━┓┏E┓╻ ╻╻ ╻       
@@ -20,6 +20,23 @@ so here we use an image as container also called `container.png` and another one
 
 ## Usage
 
+Create a virtualenv and install required packages:
+
 ```shell
-python steganography.py
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
+
+then, Encode images or Decode with:
+
+```shell
+# Encode
+python steganography.py <encode> <container_image_path> <containee_image_path>
+
+# Decode
+python steganography.py <decode> <image_path>
+```
+
+see `--help` for more options.
+
