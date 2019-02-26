@@ -20,6 +20,8 @@ so here we use an image as container also called `container.png` and another one
 
 ## Usage
 
+> It needs container and containee images to be the same size.
+
 Create a virtualenv and install required packages:
 
 ```shell
